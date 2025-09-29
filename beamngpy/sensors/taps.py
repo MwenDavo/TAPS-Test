@@ -42,7 +42,7 @@ class TAPS(CommBase):
             is_visualised
         )
 
-        # Fetch the unique Id number (in the simulator) for this GPS sensor.  We will need this later.
+        # Fetch the unique Id number (in the simulator) for this TAPS sensor.  We will need this later.
         self.sensorId = self._get_TAPS_id()
 
         self.logger.debug("TAPS - sensor created: " f"{self.name}")
@@ -72,10 +72,10 @@ class TAPS(CommBase):
         readings_data = []
         if self.is_send_immediately:
             # Get the most-recent single reading from vlua.
-            readings_data = self._poll_GPS_VE()
+            readings_data = self._poll_TAPS_VE()
         else:
             # Get the bulk data from ge lua.
-            readings_data = self._poll_GPS_GE()
+            readings_data = self._poll_TAPS_GE()
 
         self.logger.debug(
             "TAPS - sensor readings received from simulation: " f"{self.name}"
