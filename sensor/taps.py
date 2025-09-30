@@ -1,20 +1,17 @@
 from logging import DEBUG, getLogger
-from typing import TYPE_CHECKING
 
 from beamngpy.connection import CommBase
 from beamngpy.logging import LOGGER_ID
 
 from beamngpy.types import Float3, StrDict
-
-if TYPE_CHECKING:
-    from beamngpy.beamng import BeamNGpy
-    from beamngpy.vehicle import Vehicle
+from beamngpy.beamng import BeamNGpy
+from beamngpy.vehicle import Vehicle
 
 __all__ = ["TAPS"]
 
 
 class TAPS(CommBase):
-    def __init(self, name: str,
+    def __init__(self, name: str,
                bng: BeamNGpy,
                vehicle: Vehicle,
                gfx_update_time: float = 0.0,
